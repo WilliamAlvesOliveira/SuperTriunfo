@@ -138,7 +138,7 @@ int main(){
     printf("\n");
     
     printf(Ansi_blue);
-    printf("===========================================================\n");
+    printf("-----------------------------------------------------------\n");
     printf("                          RESULTADO                        \n");
     printf("-----------------------------------------------------------\n");
     printf(Ansi_reset);
@@ -154,6 +154,19 @@ int main(){
     printf(Ansi_blue);
     printf("===========================================================\n");
     printf(Ansi_reset);
+    printf("\n");
+
+    printf(Ansi_green);
+    printf("Atriburo Coringa!");
+    printf(Ansi_reset);
+    printf("\n");
+
+    printf("No atributo POPULAÇÃO ");
+    if(carta1_populacao > carta2_populacao){
+        printf("%sa Carta 1%s venceu\n", Ansi_green, Ansi_reset);
+    }else{
+        printf("%sa Carta 2%s venceu\n", Ansi_green, Ansi_reset);
+    }
 
     printf("\n");
     printf(Ansi_red);

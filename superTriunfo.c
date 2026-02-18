@@ -1,4 +1,9 @@
 #include <stdio.h>
+#define Ansi_blue "\x1b[34m"
+#define Ansi_green "\x1b[32m"
+#define Ansi_red "\x1b[31m"
+#define Ansi_reset "\x1b[0m"
+
 
 int main(){
     char carta1_estado, carta2_estado,
@@ -15,7 +20,9 @@ int main(){
     carta1_PIB_per_capta, carta2_PIB_per_capta,
     carta1_super_poder, carta2_super_poder;
 
+    printf(Ansi_blue);
     printf("Cadastro Carta 1 ------------------------------------------\n");
+    printf(Ansi_reset);
 
     printf("Digite a letra inicial do estado: ");
     scanf(" %c", &carta1_estado);
@@ -27,7 +34,7 @@ int main(){
     scanf("%s", carta1_cidade);
 
     printf("Digite o número populacional: ");
-    scanf("%u", &carta1_populacao);
+    scanf("%lu", &carta1_populacao);
 
     printf("Digite a Área (em Km separados com .): ");
     scanf("%f", &carta1_area);
@@ -48,14 +55,18 @@ int main(){
                        + carta1_PIB_per_capta 
                        + (1.0f / carta1_densidade_populacional);
 
-    printf("==========================================================\n");
+    printf(Ansi_blue);
+    printf("===========================================================\n");
+    printf(Ansi_reset);
     printf("\n");
 
+    printf(Ansi_green);
     printf("CARTA 1\n");
+    printf(Ansi_reset);
     printf("Inicial do Estado: %c\n", carta1_estado);
     printf("Código: %s\n", carta1_codigo);
     printf("Nome da Cidade: %s\n", carta1_cidade);
-    printf("Número Populacional: %u\n", carta1_populacao);
+    printf("Número Populacional: %lu\n", carta1_populacao);
     printf("Área (em Km): %.2f\n", carta1_area);
     printf("PIB: (em milhões): %.2f\n", carta1_PIB);
     printf("Número de Pontos Turistícos:  %d\n",carta1_pontos_turisticos);
@@ -63,10 +74,14 @@ int main(){
     printf("PIB per Capta: %.2f\n", carta1_PIB_per_capta);
     printf("SUPER PODER!!!: %f\n", carta1_super_poder);
 
+    printf(Ansi_blue);
     printf("===========================================================\n");
+    printf(Ansi_reset);
     printf("\n");
     
+    printf(Ansi_blue);
     printf("Cadastro Carta 2 ------------------------------------------\n");
+    printf(Ansi_reset);
 
     printf("Digite a letra inicial do estado: ");
     scanf(" %c", &carta2_estado);
@@ -78,7 +93,7 @@ int main(){
     scanf("%s", carta2_cidade);
 
     printf("Digite o número populacional: ");
-    scanf("%u", &carta2_populacao);
+    scanf("%lu", &carta2_populacao);
 
     printf("Digite a Área (em Km separados com .): ");
     scanf("%f", &carta2_area);
@@ -98,26 +113,35 @@ int main(){
                        + carta2_PIB_per_capta 
                        + (1.0f / carta2_densidade_populacional);
 
+    printf(Ansi_blue);
     printf("===========================================================\n");
+    printf(Ansi_reset);
     printf("\n");
 
+    printf(Ansi_green);
     printf("CARTA 2\n");
+    printf(Ansi_reset);
     printf("Inicial do Estado: %c\n", carta2_estado);
     printf("Código: %s\n", carta2_codigo);
     printf("Nome da Cidade: %s\n", carta2_cidade);
-    printf("Número Populacional: %u\n", carta2_populacao);
+    printf("Número Populacional: %lu\n", carta2_populacao);
     printf("Área (em Km): %.2f\n", carta2_area);
     printf("PIB: (em milhões): %.2f\n", carta2_PIB);
     printf("Número de Pontos Turistícos:  %d\n",carta2_pontos_turisticos);
     printf("Densidade Populacional: %.3f\n", carta2_densidade_populacional);
     printf("PIB per Capta: %.2f\n", carta2_PIB_per_capta);
     printf("SUPER PODER!!!: %f\n", carta2_super_poder);
+
+    printf(Ansi_blue);
     printf("===========================================================\n");
+    printf(Ansi_reset);
     printf("\n");
     
+    printf(Ansi_blue);
     printf("===========================================================\n");
     printf("                          RESULTADO                        \n");
     printf("-----------------------------------------------------------\n");
+    printf(Ansi_reset);
 
     printf("Comparação de Cartas:\n");
     printf("População: Carta 1 venceu (%d)\n", carta1_populacao > carta2_populacao);
@@ -127,11 +151,14 @@ int main(){
     printf("Densidade Populacional: (%d)\n",carta1_densidade_populacional < carta2_densidade_populacional );
     printf("PIB per Capita: Carta 1 venceu (%d)\n", carta1_PIB_per_capta > carta2_PIB_per_capta);
     printf("Super Poder: Carta 1 venceu (%d)\n",carta1_super_poder > carta2_super_poder);
+    printf(Ansi_blue);
     printf("===========================================================\n");
+    printf(Ansi_reset);
 
     printf("\n");
+    printf(Ansi_red);
     printf("FIM DA EXECUÇÃO.");
-
+    printf(Ansi_reset);
 
     return 0;
 }   
